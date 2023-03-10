@@ -1,0 +1,22 @@
+{
+  "name": "Monolithic-Swagger-App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Chetan Korde",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-basic-auth": "^1.2.1",
+    "http": "0.0.1-security",
+    "json-refs": "^3.0.15",
+    "path": "^0.12.7",
+    "swagger-ui-express": "^4.6.0",
+    "yamljs": "^0.3.0"
+  }
+}

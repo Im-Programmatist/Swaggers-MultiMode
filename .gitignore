@@ -1,0 +1,11 @@
+./Monolithic-Swagger-App/node_modules
+Monolithic-Swagger-App/node_modules
+
+./S3-NPM-Webpack/node_modules
+S3-NPM-Webpack/node_modules
+
+./Swagger-Annotation/node_modules
+Swagger-Annotation/node_modules
+
+./Swagger-Lambda/node_modules
+Swagger-Lambda/node_modules

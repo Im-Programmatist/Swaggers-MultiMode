@@ -1,0 +1,39 @@
+{
+  "name": "S3-NPM-Webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build-test": "webpack",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "swagger-ui": "^4.18.0"
+  },
+  "browser": {
+    "buffer": false
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "https-browserify": "^1.0.0",
+    "json-loader": "^0.5.7",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "style-loader": "^3.3.1",
+    "url": "^0.11.0",
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.1",
+    "yaml-loader": "^0.8.0"
+  }
+}

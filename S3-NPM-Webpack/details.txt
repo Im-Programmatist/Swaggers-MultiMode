@@ -1,0 +1,1 @@
+https://robertbulmer.medium.com/api-documentation-using-aws-s3-and-swagger-ui-dabb834540e5

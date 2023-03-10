@@ -1,0 +1,321 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "DealCalc 2.0",
+        "description": "Swagger Api Tool for MEAN",
+        "version": "1.0.0"
+    },
+    "url": "https://petstore.swagger.io/v2/swagger.json",
+    "dom_id": "#swagger-ui",
+    "validatorUrl": "https://validator.swagger.io/validator",
+    "servers": [
+        {
+            "url": "http://{host}/{base_api}",
+            "description": "base url for api",
+            "variables": {
+                "host": {
+                    "default": "localhost:8000/api"
+                },
+                "base_api": {
+                    "default": "api"
+                }
+            }
+        },
+        {
+            "url": "http://localhost:9000/api/",
+            "description": "local"
+        },
+        {
+            "url": "http://localhost:5000/api/",
+            "description": "stage"
+        },
+        {
+            "url": "https://localhost:9000/api/",
+            "description": "local secure"
+        },
+        {
+            "url": "https://localhost:5000/api/",
+            "description": "stage secure"
+        },
+        {
+            "url": "https://{username}.gigantic-server.com:{port}/{basePath}",
+            "description": "The production API server",
+            "variables": {
+                "username": {
+                    "default": "demo",
+                    "description": "this value is assigned by the service provider, in this example `gigantic-server.com`"
+                },
+                "port": {
+                    "enum": [
+                        "8443",
+                        "443"
+                    ],
+                    "default": "8443"
+                },
+                "basePath": {
+                    "default": "v2"
+                }
+            }
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "responses": {
+        "UnauthorizedError": {
+            "description": "Access token is missing or invalid"
+        }
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "This is start Api"
+                ],
+                "summary": "This is start express api",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#definitions/appResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#definitions/errorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/test": {
+            "get": {
+                "servers": [
+                    {
+                        "url": "https://files.example.com",
+                        "description": "Override base path for all operations with the /files path"
+                    }
+                ],
+                "tags": [
+                    "This is test Api"
+                ],
+                "summary": "This is test express api",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#definitions/appResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#definitions/errorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/optimise-pay": {
+            "post": {
+                "tags": [
+                    "Dealcalc Module"
+                ],
+                "summary": "Dealcalc Module data",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "description": "optimise pay body",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#definitions/optimisePay"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#definitions/appResponse"
+                        }
+                    },
+                    "default": {
+                        "description": "Error",
+                        "schema": {
+                            "$ref": "#definitions/errorResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/users/{userId}": {
+            "get": {
+                "summary": "Get a user by ID",
+                "parameters": "...",
+                "responses": {
+                    "200": {
+                        "description": "A single user.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/definitions/schemas/User"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "$ref": "#/definitions/responses/NotFound"
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "summary": "Get all users",
+                "responses": {
+                    "200": {
+                        "description": "A list of users.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/schemas/User"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "_comment": "Complex objects have schema definitions",
+    "definitions": {
+        "appResponse": {
+            "required": "message",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "number"
+                }
+            }
+        },
+        "errorResponse": {
+            "required": "message",
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "optimisePay": {
+            "type": "object",
+            "properties": {
+                "revenueAmount": {
+                    "type": "number"
+                },
+                "totalFixedCost": {
+                    "type": "number"
+                },
+                "gsaDailyMeals": {
+                    "type": "number"
+                },
+                "gsaDailyLodging": {
+                    "type": "number"
+                },
+                "payRate": {
+                    "type": "number"
+                },
+                "payBurden": {
+                    "type": "number"
+                },
+                "totalHours": {
+                    "type": "number"
+                },
+                "premiumFactor": {
+                    "type": "number"
+                },
+                "gpPercentage": {
+                    "type": "number"
+                },
+                "numberOfWeeks": {
+                    "type": "number"
+                },
+                "mealsFrequency": {
+                    "type": "string"
+                },
+                "lodgingFrequency": {
+                    "type": "string"
+                },
+                "hasMealsAndLodging": {
+                    "type": "boolean"
+                }
+            },
+            "example": {
+                "revenueAmount": 35796.264,
+                "totalFixedCost": 1683.9199623694788,
+                "gsaDailyMeals": 71,
+                "gsaDailyLodging": 181,
+                "payRate": 20,
+                "payBurden": 1.124,
+                "totalHours": 588,
+                "premiumFactor": 0.95,
+                "gpPercentage": 23,
+                "numberOfWeeks": 14,
+                "mealsFrequency": "Daily",
+                "lodgingFrequency": "Months",
+                "hasMealsAndLodging": true
+            }
+        },
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "responses": {
+            "NotFound": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
