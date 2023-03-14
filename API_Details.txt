@@ -1,8 +1,5 @@
 1. S3 Static Website Way
 
-----> Medium blog
-    https://medium.com/learnaws/host-swagger-ui-of-aws-lambda-by-using-amazon-s3-cbf285d5a9fa
-
 # POC 1 -  http://swagger-bucket-01.s3-website.ap-south-1.amazonaws.com/#/pet
 
 ----> One of the best way *** S3, cloudfront, cognito, api gateway, swagger
@@ -21,9 +18,14 @@
       https://github.com/HarishKM7/aws-api-gateway-swagger-ui
 ----> https://towardsaws.com/access-swagger-ui-in-aws-lambda-via-api-gateway-deployed-with-the-serverless-framework-d80268ef1d79
 
+----> Medium blog
+    https://medium.com/learnaws/host-swagger-ui-of-aws-lambda-by-using-amazon-s3-cbf285d5a9fa
+
+    
 3. Create API Gateway using Swagger/Open API
 
 ----> swagger smart bear 
     https://support.smartbear.com/swaggerhub/docs/integrations/amazon-api-gateway.html
     https://app.swaggerhub.com/apis/smartbear-demos/petstore/1.0.0
     https://app.swaggerhub.com/apis/dusan2316/Sample/1.0.0#/developers/addStat
+
